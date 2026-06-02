@@ -1,0 +1,49 @@
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Visual Studio for Mac
+*.userprefs
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+
+# Test Results
+TestResults/
+
+# Publish Output
+publish/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Avalonia Generated Files
+*.g.cs
+*.g.i.cs
+
+# JetBrains Rider cache
+_ReSharper*/
+*.DotSettings.user
+
+# Visual Studio Code workspace
+*.code-workspace
