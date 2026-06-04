@@ -26,7 +26,7 @@ public class MultiThreadBruteForceEngine
 {
     private const string Characters = BruteForceGenerator.Characters;
     private const int    MaxLength  = 6;
-    private const string Salt       = "COMP123_STATIC_SALT";
+    private const string Salt = "COMP123_STATIC_SALT";
 
     // Exposed so the UI can poll it for a real progress bar.
     public long AttemptCount => Interlocked.Read(ref _attempts);
