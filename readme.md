@@ -110,30 +110,131 @@ Planned for Next Development Session:
 * Final report preparation
 ---
 
-## Version 2.0 – 04 June 2026
+### Version 2.0 – 04 June 2026
 
-### Password Management and Security
+### Password Security Implementation
 
-Implemented password generation and hashing functionality.
+Implemented the password management and security components of the application.
 
 ### Completed
 
 #### PasswordHasher
 
-- Implemented SHA256 hashing.
+- Implemented SHA256 password hashing.
 - Added constant static salt:
   - `COMP123_STATIC_SALT`
+- Verified correct hash generation.
 
 #### PasswordManager
 
 - Implemented random password generation.
-- Password length generated between `[4–6)` characters.
-- Integrated hashing functionality.
+- Password length generated between `[4–6)` characters as required.
+- Integrated password hashing functionality.
 
 #### PasswordValidator
 
-- Implemented hash comparison.
-- Separated validation logic from brute force generation logic.
+- Implemented password hash validation.
+- Separated validation logic from password generation logic.
 
 ### Testing
 
+- Generated multiple random passwords.
+- Verified generated hashes.
+- Confirmed validator correctly compares generated hashes.
+
+### Challenges
+
+- Encountered namespace conflicts caused by duplicate class definitions.
+- Resolved build errors related to project structure and missing references.
+- Refactored files into appropriate folders.
+
+---
+
+## Version 3.0 – 05 June 2026
+
+### Brute Force Engine Development
+
+Implemented the brute force attack functionality.
+
+### Completed
+
+#### BruteForceGenerator
+
+- Implemented recursive brute force generator.
+- Generates combinations from length 1 up to the maximum length.
+- Does not require prior knowledge of password length.
+
+#### BruteForceEngine
+
+- Implemented single-thread brute force search.
+- Added password recovery using hash comparison.
+- Added execution time tracking using `Stopwatch`.
+
+### Testing
+
+Successfully recovered generated passwords.
+
+Example Output:
+
+```text
+Original Password: abcd
+Found Password: abcd
+```
+
+### Challenges
+
+- Managing search performance as password length increased.
+- Testing brute force search while maintaining assignment requirements.
+
+---
+
+## Version 4.0 – 06 June 2026
+
+### User Interface Integration
+
+Integrated backend functionality with the Avalonia graphical user interface.
+
+### Completed
+
+#### GUI Features
+
+- Added Generate Password button.
+- Added Start Attack button.
+- Added Stop Attack button.
+- Added Progress Bar.
+- Added password display.
+- Added elapsed time display.
+- Added attack result display.
+
+#### Functionality
+
+- Connected password generation to GUI.
+- Connected single-thread brute force engine to GUI.
+- Displayed recovered password and execution time.
+- Added progress updates within the interface.
+
+### Current Working Features
+
+- Password generation
+- SHA256 hashing with static salt
+- Password validation
+- Brute force generation
+- Single-thread brute force attack
+- Progress display
+- Result display
+- Avalonia GUI integration
+
+### Known Issue
+
+The multi-thread brute force implementation has been partially implemented and successfully demonstrates parallel execution using Task-based processing. However, performance testing revealed that the current recursive implementation introduces significant overhead and does not yet outperform the single-thread implementation.
+
+### Planned Improvements
+
+- Redesign multi-thread brute force engine.
+- Improve workload distribution across available CPU cores.
+- Implement efficient thread cancellation using `CancellationTokenSource`.
+- Display multi-thread execution statistics.
+- Calculate speedup between single-thread and multi-thread execution.
+- Create UML class diagram.
+- Prepare final testing report and screenshots.
+- Package final project for submission.
