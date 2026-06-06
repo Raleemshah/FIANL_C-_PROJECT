@@ -1,34 +1,22 @@
-﻿using System;
-using PasswordResetSimulator.Models;
-using PasswordResetSimulator.BruteForce;
-
-namespace PasswordResetSimulator.ViewModels;
+﻿namespace PasswordResetSimulator.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting { get; }
+    public string OriginalPassword { get; set; }
+        = "Password not generated";
 
-    public MainWindowViewModel()
-    {
-        PasswordManager manager = new();
+    public string FoundPassword { get; set; }
+        = "Not found";
 
-        string password =
-            manager.GeneratePassword();
+    public string ElapsedTime { get; set; }
+        = "0 sec";
 
-        string hash =
-            manager.GenerateHash(password);
+    public string SingleThreadTime { get; set; }
+        = "-";
 
-        BruteForceEngine engine = new();
+    public string MultiThreadTime { get; set; }
+        = "-";
 
-        string? foundPassword =
-            engine.FindPassword(
-                hash,
-                6,
-                out TimeSpan elapsed);
-
-        Greeting =
-            $"Original Password: {password}\n\n" +
-            $"Found Password: {foundPassword}\n\n" +
-            $"Elapsed Time: {elapsed.TotalSeconds:F2} sec";
-    }
+    public string Speedup { get; set; }
+        = "-";
 }

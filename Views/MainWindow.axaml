@@ -3,18 +3,74 @@
         xmlns:vm="using:PasswordResetSimulator.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
         x:Class="PasswordResetSimulator.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="PasswordResetSimulator">
+        Width="700"
+        Height="500"
+        Title="Password Reset Simulator">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <StackPanel Margin="20" Spacing="10">
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock
+            Text="Password Reset Simulator"
+            FontSize="24"
+            FontWeight="Bold"/>
+
+        <Button
+            Name="GeneratePasswordButton"
+            Content="Generate Password"
+            Width="200"
+            Click="GeneratePassword_Click"/>
+
+        <Button
+            Name="StartButton"
+            Content="Start Attack"
+            Width="200"
+            Click="StartAttack_Click"/>
+
+        <Button
+            Name="StopButton"
+            Content="Stop Attack"
+            Width="200"
+            Click="StopAttack_Click"/>
+
+        <TextBlock
+            Text="Progress"
+            FontWeight="Bold"/>
+
+        <ProgressBar
+            Name="AttackProgress"
+            Minimum="0"
+            Maximum="100"
+            Value="50"
+            Height="30"
+            Width="500"/>
+
+        <TextBlock
+            Name="OriginalPasswordText"
+            Text="Original Password: -"/>
+
+        <TextBlock
+            Name="FoundPasswordText"
+            Text="Found Password: -"/>
+
+        <TextBlock
+            Name="ElapsedTimeText"
+            Text="Elapsed Time: -"/>
+
+        <TextBlock
+            Name="SingleThreadText"
+            Text="Single Thread: -"/>
+
+        <TextBlock
+            Name="MultiThreadText"
+            Text="Multi Thread: -"/>
+
+        <TextBlock
+            Name="SpeedupText"
+            Text="Speedup: -"/>
+
+    </StackPanel>
 
 </Window>

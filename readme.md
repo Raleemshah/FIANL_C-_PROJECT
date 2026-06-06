@@ -108,3 +108,32 @@ Planned for Next Development Session:
 * Performance comparison logging
 * UML diagram
 * Final report preparation
+---
+
+## Version 2.0 – 04 June 2026
+
+### Password Management and Security
+
+Implemented password generation and hashing functionality.
+
+### Completed
+
+#### PasswordHasher
+
+- Implemented SHA256 hashing.
+- Added constant static salt:
+  - `COMP123_STATIC_SALT`
+
+#### PasswordManager
+
+- Implemented random password generation.
+- Password length generated between `[4–6)` characters.
+- Integrated hashing functionality.
+
+#### PasswordValidator
+
+- Implemented hash comparison.
+- Separated validation logic from brute force generation logic.
+
+### Testing
+

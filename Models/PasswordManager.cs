@@ -12,7 +12,7 @@ public class PasswordManager
 
     public string GeneratePassword()
     {
-        int length = _random.Next(4, 6);
+        int length = 4;
 
         char[] password = new char[length];
 
