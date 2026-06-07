@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿//viewmodelbase.cs
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PasswordResetSimulator.ViewModels;
 

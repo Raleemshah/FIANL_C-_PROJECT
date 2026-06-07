@@ -238,3 +238,49 @@ The multi-thread brute force implementation has been partially implemented and s
 - Create UML class diagram.
 - Prepare final testing report and screenshots.
 - Package final project for submission.
+
+## Version  5.0 – 7 June 2026
+
+## Work Completed
+
+### Password Reset Simulator
+
+Completed the implementation of a Password Reset Simulator using C# and Avalonia UI.
+
+### Features Implemented
+
+* Random password generation.
+* SHA-256 password hashing with a static salt.
+* Password validation using hash comparison.
+* Single-threaded brute-force password recovery.
+* Multi-threaded brute-force password recovery.
+* Progress bar for attack execution.
+* Start and Stop attack controls.
+* Cancellation support using CancellationToken.
+* Performance measurement using Stopwatch.
+* Speedup calculation comparing single-threaded and multi-threaded execution.
+* Graphical user interface developed using Avalonia.
+
+### Multithreading Implementation
+
+* Implemented parallel brute-force search using multiple worker threads.
+* Distributed the search space across available CPU cores.
+* Added thread-safe password discovery using Interlocked operations.
+* Implemented cooperative cancellation when a password is found or when the user stops the attack.
+
+### Testing
+
+* Verified successful password recovery for generated passwords.
+* Tested single-thread and multi-thread execution times.
+* Verified cancellation functionality.
+* Verified GUI updates and progress display.
+* Confirmed speedup calculations are displayed correctly.
+
+### Documentation
+
+* Created UML Class Diagram for the application.
+* Documented system architecture and class relationships.
+
+## Outcome
+
+The Password Reset Simulator was successfully completed and demonstrates object-oriented programming principles, cryptographic hashing, multithreading, task parallelism, GUI development, and performance comparison between sequential and parallel execution.

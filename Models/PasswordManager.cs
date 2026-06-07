@@ -1,3 +1,4 @@
+//password manager.cs
 using System;
 using PasswordResetSimulator.Security;
 
@@ -12,7 +13,8 @@ public class PasswordManager
 
     public string GeneratePassword()
     {
-        int length = 4;
+      int length = _random.Next(4, 6);
+      //int length = 4;
 
         char[] password = new char[length];
 

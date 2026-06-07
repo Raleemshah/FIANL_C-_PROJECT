@@ -1,4 +1,5 @@
-﻿namespace PasswordResetSimulator.ViewModels;
+﻿//mainwindowviewmodel.cs
+namespace PasswordResetSimulator.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
